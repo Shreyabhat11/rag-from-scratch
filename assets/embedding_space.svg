@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 260" width="860" height="260">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d16"/>
+      <stop offset="100%" style="stop-color:#111120"/>
+    </linearGradient>
+    <pattern id="grid4" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,229,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <!-- radial glow for clusters -->
+    <radialGradient id="glow_green" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(16,185,129,0.25)"/>
+      <stop offset="100%" style="stop-color:rgba(16,185,129,0)"/>
+    </radialGradient>
+    <radialGradient id="glow_cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(0,229,255,0.25)"/>
+      <stop offset="100%" style="stop-color:rgba(0,229,255,0)"/>
+    </radialGradient>
+    <radialGradient id="glow_purple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(124,58,237,0.25)"/>
+      <stop offset="100%" style="stop-color:rgba(124,58,237,0)"/>
+    </radialGradient>
+    <radialGradient id="glow_amber" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:rgba(245,158,11,0.25)"/>
+      <stop offset="100%" style="stop-color:rgba(245,158,11,0)"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="860" height="260" fill="url(#bg4)" rx="8"/>
+  <rect width="860" height="260" fill="url(#grid4)" rx="8"/>
+  <rect width="860" height="260" fill="none" stroke="#1e1e2e" stroke-width="1.5" rx="8"/>
+
+  <!-- Title -->
+  <text x="24" y="30" font-size="9" fill="#475569" letter-spacing="2" font-family="JetBrains Mono,monospace">EMBEDDING SPACE — SEMANTIC CLUSTERS (384-DIM PROJECTED TO 2D)</text>
+  <line x1="24" y1="36" x2="836" y2="36" stroke="#1e2030" stroke-width="1"/>
+
+  <!-- Left panel: embedding space scatter plot -->
+  <!-- Axes -->
+  <line x1="60" y1="55" x2="60" y2="235" stroke="#1e2030" stroke-width="1.5"/>
+  <line x1="60" y1="235" x2="440" y2="235" stroke="#1e2030" stroke-width="1.5"/>
+  <text x="250" y="253" font-size="8" fill="#334155" text-anchor="middle" font-family="JetBrains Mono,monospace">— Semantic Space (projected) —</text>
+
+  <!-- Cluster 1: Transformers/Attention (green) -->
+  <ellipse cx="160" cy="110" rx="50" ry="40" fill="url(#glow_green)" opacity="0.8"/>
+  <circle cx="148" cy="105" r="5" fill="#10b981" opacity="0.9"/>
+  <circle cx="168" cy="95" r="4" fill="#10b981" opacity="0.8"/>
+  <circle cx="158" cy="120" r="5" fill="#10b981" opacity="0.85"/>
+  <circle cx="175" cy="112" r="3.5" fill="#10b981" opacity="0.7"/>
+  <circle cx="142" cy="118" r="4" fill="#10b981" opacity="0.75"/>
+  <text x="160" y="160" font-size="9" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">Transformers</text>
+  <text x="160" y="171" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">Attention · BERT · GPT</text>
+
+  <!-- Cluster 2: Optimization (cyan) -->
+  <ellipse cx="310" cy="100" rx="45" ry="38" fill="url(#glow_cyan)" opacity="0.8"/>
+  <circle cx="300" cy="92" r="5" fill="#00e5ff" opacity="0.9"/>
+  <circle cx="318" cy="100" r="4.5" fill="#00e5ff" opacity="0.8"/>
+  <circle cx="305" cy="113" r="4" fill="#00e5ff" opacity="0.85"/>
+  <circle cx="325" cy="88" r="3.5" fill="#00e5ff" opacity="0.7"/>
+  <circle cx="290" cy="107" r="4" fill="#00e5ff" opacity="0.75"/>
+  <text x="310" y="150" font-size="9" fill="#00e5ff" text-anchor="middle" font-family="JetBrains Mono,monospace">Optimization</text>
+  <text x="310" y="161" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">SGD · Adam · Loss</text>
+
+  <!-- Cluster 3: RAG/Retrieval (purple) -->
+  <ellipse cx="200" cy="198" rx="52" ry="30" fill="url(#glow_purple)" opacity="0.8"/>
+  <circle cx="188" cy="195" r="5" fill="#a78bfa" opacity="0.9"/>
+  <circle cx="208" cy="188" r="4" fill="#a78bfa" opacity="0.8"/>
+  <circle cx="218" cy="202" r="5" fill="#a78bfa" opacity="0.85"/>
+  <circle cx="178" cy="204" r="3.5" fill="#a78bfa" opacity="0.7"/>
+  <circle cx="200" cy="212" r="4" fill="#a78bfa" opacity="0.75"/>
+  <text x="200" y="235" font-size="9" fill="#a78bfa" text-anchor="middle" font-family="JetBrains Mono,monospace">RAG · Embeddings · FAISS</text>
+
+  <!-- Query point with dashed lines to nearest cluster -->
+  <circle cx="185" cy="140" r="7" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,2"/>
+  <circle cx="185" cy="140" r="3.5" fill="#f59e0b"/>
+  <text x="200" y="136" font-size="9" fill="#f59e0b" font-family="JetBrains Mono,monospace">Query ⭢</text>
+  <!-- similarity lines -->
+  <line x1="185" y1="133" x2="168" y2="118" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" opacity="0.7"/>
+  <line x1="185" y1="147" x2="188" y2="190" stroke="#a78bfa" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <text x="128" y="132" font-size="8" fill="#10b981" font-family="JetBrains Mono,monospace">sim=0.85</text>
+  <text x="192" y="170" font-size="8" fill="#a78bfa" font-family="JetBrains Mono,monospace">sim=0.31</text>
+
+  <!-- Vertical divider -->
+  <line x1="460" y1="46" x2="460" y2="248" stroke="#1e2030" stroke-width="1" stroke-dasharray="4,4"/>
+
+  <!-- Right panel: vector representation -->
+  <text x="480" y="58" font-size="9" fill="#475569" letter-spacing="1" font-family="JetBrains Mono,monospace">VECTOR ANATOMY</text>
+
+  <!-- Chunk text box -->
+  <rect x="480" y="66" width="356" height="40" rx="3" fill="#0f172a" stroke="#1e2030" stroke-width="1"/>
+  <text x="492" y="82" font-size="9" fill="#94a3b8" font-family="JetBrains Mono,monospace">chunk_003 →</text>
+  <text x="492" y="97" font-size="9" fill="#e2e8f0" font-family="JetBrains Mono,monospace">"Attention is all you need..."</text>
+
+  <!-- Arrow down -->
+  <line x1="658" y1="110" x2="658" y2="126" stroke="#334155" stroke-width="1.5"/>
+  <polygon points="652,124 658,134 664,124" fill="#334155"/>
+  <text x="668" y="122" font-size="9" fill="#10b981" font-family="JetBrains Mono,monospace">encode()</text>
+
+  <!-- Vector cells -->
+  <text x="480" y="155" font-size="9" fill="#475569" letter-spacing="1" font-family="JetBrains Mono,monospace">→ float32[384]</text>
+
+  <!-- 12 vector cells in 2 rows -->
+  <!-- Row 1 -->
+  <rect x="480" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="500" y="177" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">0.213</text>
+
+  <rect x="524" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="544" y="177" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">-0.44</text>
+
+  <rect x="568" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="588" y="177" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">0.871</text>
+
+  <rect x="612" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="632" y="177" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">0.031</text>
+
+  <rect x="656" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="676" y="177" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">-0.10</text>
+
+  <rect x="700" y="162" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="720" y="177" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">0.557</text>
+
+  <text x="748" y="176" font-size="12" fill="#334155" font-family="JetBrains Mono,monospace">···</text>
+
+  <!-- Row 2 -->
+  <rect x="480" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="500" y="203" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">0.029</text>
+
+  <rect x="524" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="544" y="203" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">-0.71</text>
+
+  <rect x="568" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="588" y="203" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">0.293</text>
+
+  <rect x="612" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="632" y="203" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">-0.08</text>
+
+  <rect x="656" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.15)" stroke="rgba(16,185,129,0.4)" stroke-width="1"/>
+  <text x="676" y="203" font-size="8" fill="#10b981" text-anchor="middle" font-family="JetBrains Mono,monospace">0.441</text>
+
+  <rect x="700" y="188" width="40" height="22" rx="2" fill="rgba(16,185,129,0.08)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="720" y="203" font-size="8" fill="#475569" text-anchor="middle" font-family="JetBrains Mono,monospace">-0.17</text>
+
+  <text x="748" y="202" font-size="12" fill="#334155" font-family="JetBrains Mono,monospace">···</text>
+
+  <!-- Dimension label -->
+  <text x="480" y="230" font-size="9" fill="#10b981" font-family="JetBrains Mono,monospace">L2-normalised → cosine sim</text>
+  <text x="480" y="244" font-size="8" fill="#475569" font-family="JetBrains Mono,monospace">= dot product (fast in FAISS IndexFlatIP)</text>
+
+  <!-- Bottom label -->
+  <text x="836" y="253" font-size="9" fill="#1e3a4a" text-anchor="end" letter-spacing="1" font-family="JetBrains Mono,monospace">RAG · Day 01</text>
+</svg>

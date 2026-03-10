@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 200" width="860" height="200" style="font-family:'JetBrains Mono',monospace">
+  <defs>
+    <linearGradient id="bg_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d16"/>
+      <stop offset="100%" style="stop-color:#111120"/>
+    </linearGradient>
+    <!-- Node glow filters -->
+    <filter id="glow_cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="glow_purple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,229,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <!-- Arrow marker -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="200" fill="url(#bg_grad)" rx="8"/>
+  <rect width="860" height="200" fill="url(#grid)" rx="8"/>
+  <!-- Border -->
+  <rect width="860" height="200" fill="none" stroke="#1e1e2e" stroke-width="1.5" rx="8"/>
+
+  <!-- Phase label -->
+  <text x="24" y="30" font-size="9" fill="#475569" letter-spacing="2" font-family="JetBrains Mono,monospace" text-anchor="start">PHASE 1 — INDEXING PIPELINE (OFFLINE)</text>
+  <line x1="24" y1="36" x2="836" y2="36" stroke="#1e1e2e" stroke-width="1"/>
+
+  <!-- ═══ NODE 1: Raw Docs ═══ -->
+  <rect x="24" y="60" width="120" height="80" rx="3" fill="rgba(0,229,255,0.06)" stroke="rgba(0,229,255,0.35)" stroke-width="1.5"/>
+  <text x="84" y="92" font-size="22" text-anchor="middle">📄</text>
+  <text x="84" y="112" font-size="11" fill="#00e5ff" text-anchor="middle" font-weight="600">Raw Docs</text>
+  <text x="84" y="128" font-size="9" fill="#475569" text-anchor="middle">Input</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="148" y1="100" x2="188" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══ NODE 2: Chunker ═══ -->
+  <rect x="192" y="60" width="120" height="80" rx="3" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.35)" stroke-width="1.5"/>
+  <text x="252" y="92" font-size="22" text-anchor="middle">✂️</text>
+  <text x="252" y="112" font-size="11" fill="#a78bfa" text-anchor="middle" font-weight="600">Chunker</text>
+  <text x="252" y="128" font-size="9" fill="#475569" text-anchor="middle">Split Text</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="316" y1="100" x2="356" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══ NODE 3: Encoder ═══ -->
+  <rect x="360" y="60" width="140" height="80" rx="3" fill="rgba(16,185,129,0.07)" stroke="rgba(16,185,129,0.35)" stroke-width="1.5"/>
+  <text x="430" y="92" font-size="22" text-anchor="middle">🧠</text>
+  <text x="430" y="112" font-size="11" fill="#10b981" text-anchor="middle" font-weight="600">Encoder</text>
+  <text x="430" y="128" font-size="9" fill="#475569" text-anchor="middle">sentence-transformers</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="504" y1="100" x2="544" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══ NODE 4: Vector DB ═══ -->
+  <rect x="548" y="60" width="120" height="80" rx="3" fill="rgba(245,158,11,0.07)" stroke="rgba(245,158,11,0.35)" stroke-width="1.5"/>
+  <text x="608" y="92" font-size="22" text-anchor="middle">🗄️</text>
+  <text x="608" y="112" font-size="11" fill="#f59e0b" text-anchor="middle" font-weight="600">Vector DB</text>
+  <text x="608" y="128" font-size="9" fill="#475569" text-anchor="middle">FAISS Index</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="672" y1="100" x2="712" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- ═══ NODE 5: Stored ═══ -->
+  <!-- Mini vector visual -->
+  <rect x="716" y="60" width="120" height="80" rx="3" fill="rgba(245,158,11,0.04)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="776" y="78" font-size="8" fill="#f59e0b" text-anchor="middle" letter-spacing="1">INDEXED</text>
+  <!-- vector cells -->
+  <rect x="726" y="84" width="20" height="14" rx="1" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+  <text x="736" y="95" font-size="7" fill="#f59e0b" text-anchor="middle">0.21</text>
+  <rect x="750" y="84" width="20" height="14" rx="1" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+  <text x="760" y="95" font-size="7" fill="#f59e0b" text-anchor="middle">-0.4</text>
+  <rect x="774" y="84" width="20" height="14" rx="1" fill="rgba(245,158,11,0.2)" stroke="rgba(245,158,11,0.4)" stroke-width="1"/>
+  <text x="784" y="95" font-size="7" fill="#f59e0b" text-anchor="middle">0.87</text>
+  <text x="808" y="95" font-size="9" fill="#475569">···</text>
+  <text x="776" y="118" font-size="9" fill="#10b981" text-anchor="middle" font-weight="600">384-dim</text>
+  <text x="776" y="132" font-size="9" fill="#475569" text-anchor="middle">per chunk</text>
+
+  <!-- Bottom label -->
+  <text x="836" y="190" font-size="9" fill="#1e3a4a" text-anchor="end" letter-spacing="1">RAG · Day 01</text>
+</svg>

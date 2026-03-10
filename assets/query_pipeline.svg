@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 200" width="1020" height="200" style="font-family:'JetBrains Mono',monospace">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d16"/>
+      <stop offset="100%" style="stop-color:#111120"/>
+    </linearGradient>
+    <pattern id="grid2" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(0,229,255,0.04)" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1020" height="200" fill="url(#bg2)" rx="8"/>
+  <rect width="1020" height="200" fill="url(#grid2)" rx="8"/>
+  <rect width="1020" height="200" fill="none" stroke="#1e1e2e" stroke-width="1.5" rx="8"/>
+
+  <!-- Phase label -->
+  <text x="24" y="30" font-size="9" fill="#475569" letter-spacing="2">PHASE 2 — QUERY PIPELINE (REAL-TIME)</text>
+  <line x1="24" y1="36" x2="996" y2="36" stroke="#1e1e2e" stroke-width="1"/>
+
+  <!-- ═══ NODE 1: Query ═══ -->
+  <rect x="16" y="60" width="110" height="80" rx="3" fill="rgba(0,229,255,0.06)" stroke="rgba(0,229,255,0.35)" stroke-width="1.5"/>
+  <text x="71" y="92" font-size="20" text-anchor="middle">❓</text>
+  <text x="71" y="112" font-size="10.5" fill="#00e5ff" text-anchor="middle" font-weight="600">User Query</text>
+  <text x="71" y="128" font-size="9" fill="#475569" text-anchor="middle">Text Input</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="100" x2="162" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- ═══ NODE 2: Encoder ═══ -->
+  <rect x="166" y="60" width="120" height="80" rx="3" fill="rgba(16,185,129,0.07)" stroke="rgba(16,185,129,0.35)" stroke-width="1.5"/>
+  <text x="226" y="92" font-size="20" text-anchor="middle">🧠</text>
+  <text x="226" y="112" font-size="10.5" fill="#10b981" text-anchor="middle" font-weight="600">Encoder</text>
+  <text x="226" y="128" font-size="9" fill="#475569" text-anchor="middle">Same Model</text>
+
+  <!-- Arrow -->
+  <line x1="290" y1="100" x2="322" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- ═══ NODE 3: ANN Search ═══ -->
+  <rect x="326" y="60" width="130" height="80" rx="3" fill="rgba(239,68,68,0.07)" stroke="rgba(239,68,68,0.35)" stroke-width="1.5"/>
+  <text x="391" y="92" font-size="20" text-anchor="middle">🔍</text>
+  <text x="391" y="112" font-size="10.5" fill="#ef4444" text-anchor="middle" font-weight="600">ANN Search</text>
+  <text x="391" y="128" font-size="9" fill="#475569" text-anchor="middle">Cosine Sim · Top-K</text>
+
+  <!-- Arrow -->
+  <line x1="460" y1="100" x2="492" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- ═══ NODE 4: Context ═══ -->
+  <rect x="496" y="60" width="130" height="80" rx="3" fill="rgba(124,58,237,0.07)" stroke="rgba(124,58,237,0.35)" stroke-width="1.5"/>
+  <text x="561" y="92" font-size="20" text-anchor="middle">📎</text>
+  <text x="561" y="112" font-size="10.5" fill="#a78bfa" text-anchor="middle" font-weight="600">Build Prompt</text>
+  <text x="561" y="128" font-size="9" fill="#475569" text-anchor="middle">Inject Context</text>
+
+  <!-- Arrow -->
+  <line x1="630" y1="100" x2="662" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- ═══ NODE 5: LLM ═══ -->
+  <rect x="666" y="60" width="120" height="80" rx="3" fill="rgba(16,185,129,0.07)" stroke="rgba(16,185,129,0.35)" stroke-width="1.5"/>
+  <text x="726" y="92" font-size="20" text-anchor="middle">🤖</text>
+  <text x="726" y="112" font-size="10.5" fill="#10b981" text-anchor="middle" font-weight="600">LLM</text>
+  <text x="726" y="128" font-size="9" fill="#475569" text-anchor="middle">Generate Answer</text>
+
+  <!-- Arrow -->
+  <line x1="790" y1="100" x2="822" y2="100" stroke="#334155" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+  <!-- ═══ NODE 6: Answer ═══ -->
+  <rect x="826" y="60" width="120" height="80" rx="3" fill="rgba(245,158,11,0.07)" stroke="rgba(245,158,11,0.35)" stroke-width="1.5"/>
+  <text x="886" y="92" font-size="20" text-anchor="middle">✅</text>
+  <text x="886" y="112" font-size="10.5" fill="#f59e0b" text-anchor="middle" font-weight="600">Answer</text>
+  <text x="886" y="128" font-size="9" fill="#475569" text-anchor="middle">Grounded Output</text>
+
+  <!-- Bottom note -->
+  <text x="996" y="190" font-size="9" fill="#1e3a4a" text-anchor="end" letter-spacing="1">RAG · Day 01</text>
+</svg>

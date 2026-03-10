@@ -1,0 +1,17 @@
+Transformers are a type of deep learning model introduced in the paper "Attention is All You Need" by Vaswani et al. in 2017. The key innovation is the self-attention mechanism, which allows the model to weigh the importance of different words in a sequence when encoding each word.
+
+The attention mechanism works by computing three vectors for each token: Query, Key, and Value. The dot product of Query and Key vectors determines attention scores, which are then softmaxed and used to weight the Value vectors. This allows the model to focus on relevant parts of the input.
+
+BERT (Bidirectional Encoder Representations from Transformers) uses the transformer encoder architecture and is pre-trained on masked language modeling. It learns deep bidirectional representations by conditioning on both left and right context simultaneously.
+
+GPT (Generative Pre-trained Transformer) uses the transformer decoder architecture for autoregressive language modeling. It predicts the next token given all previous tokens and is the foundation for large language models like ChatGPT.
+
+Gradient descent is an optimization algorithm used to minimize a loss function in machine learning. The algorithm computes the gradient of the loss with respect to model parameters and updates the parameters in the opposite direction of the gradient. The learning rate controls the size of each update step.
+
+Stochastic Gradient Descent (SGD) computes the gradient using a single training example or a mini-batch. This introduces noise but allows for faster updates and can help escape local minima. Variants like Adam and RMSprop adapt the learning rate per parameter.
+
+Retrieval-Augmented Generation (RAG) combines a retrieval system with a generative language model. Given a query, RAG first retrieves relevant documents from a knowledge base, then passes them as context to the LLM for grounded generation. This reduces hallucinations and allows the model to access up-to-date or domain-specific knowledge.
+
+Vector embeddings are dense numerical representations of text in a continuous high-dimensional space. Similar texts are placed close together in this space, enabling semantic search via cosine similarity. Models like sentence-transformers produce these embeddings efficiently.
+
+FAISS (Facebook AI Similarity Search) is an efficient library for similarity search over dense vectors. It supports exact and approximate nearest neighbor search and can scale to billions of vectors. For RAG, FAISS is commonly used as the vector store for fast retrieval.
