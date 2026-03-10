@@ -265,20 +265,6 @@ Production RAG systems typically use **hybrid retrieval** — combining dense an
 
 ---
 
-## Roadmap
-
-| Day | Topic | Status |
-|-----|-------|--------|
-| **01** | Embeddings + basic retrieval pipeline | ✅ **This repo** |
-| 02 | Add LLM generation (Anthropic / OpenAI) | 🔜 |
-| 03 | Persistent vector store with ChromaDB | 🔜 |
-| 04 | PDF ingestion + metadata filtering | 🔜 |
-| 05 | Evaluation: Recall@K, MRR, faithfulness | 🔜 |
-| 06 | Hybrid retrieval (dense + BM25) | 🔜 |
-| 07 | Re-ranking with a cross-encoder | 🔜 |
-
----
-
 ## Requirements
 
 ```
